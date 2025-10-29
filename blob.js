@@ -9,8 +9,8 @@ class Blob {
     this.x = x;
     this.y = y;
     let angle = random(0, 2 * PI);
-    this.xspeed = random(20, 20) * Math.cos(angle);
-    this.yspeed = random(20, 20) * Math.sin(angle);
+    this.xspeed = random(50, 50) * Math.cos(angle);
+    this.yspeed = random(50, 50) * Math.sin(angle);
     this.r = random(120, 240);
   }
 
