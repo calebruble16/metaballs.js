@@ -12,7 +12,7 @@ function setup() {
 }
 
 function draw() {
-  background(51);
+  background(450);
 
   loadPixels();
   for (x = 0; x < width; x++) {
