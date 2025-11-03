@@ -6,7 +6,7 @@
 var blobs = []
 
 function setup() {
-  createCanvas(580, 580);
+  createCanvas(850, 620);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
 }
@@ -22,7 +22,7 @@ function draw() {
         let xdif = x - blobs[i].x;
         let ydif = y - blobs[i].y;
         let d = sqrt((xdif * xdif) + (ydif * ydif));
-        sum += 10 * blobs[i].r / d;
+        sum += 20 * blobs[i].r / d;
       }
       set(x, y, color(sum, 255, 255));
     }
