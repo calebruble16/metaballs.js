@@ -2,7 +2,7 @@
 // http://vertmo.github.io
 
 // MetaBalls : p5.js implementation
-
+var paused = false;
 var blobs = []
 
 function setup() {
@@ -12,6 +12,9 @@ function setup() {
 }
 
 function draw() {
+
+  // UPDATE CODE HERE: What do we want to do here? We should check if we're paused and, if so, skip all the other drawing code.
+
   background(450);
 
   loadPixels();
@@ -31,5 +34,16 @@ function draw() {
 
   for (i = 0; i < blobs.length; i++) {
     blobs[i].update();
+  }
+}
+
+// This function can probably be simplified, but this will work.
+function keyPressed() {
+  if(key === 'p') {
+    if(paused === false) {  
+      paused = true;  
+    } else {  
+      paused = false;  
+    }  
   }
 }
