@@ -2,7 +2,7 @@
 // http://vertmo.github.io
 
 // MetaBalls : p5.js implementation
-var paused = false;
+let paused = false;
 var blobs = []
 
 function setup() {
@@ -37,13 +37,14 @@ function draw() {
   }
 }
 
-// This function can probably be simplified, but this will work.
 function keyPressed() {
-  if(key === 'p') {
-    if(paused === false) {  
-      paused = true;  
-    } else {  
-      paused = false;  
-    }  
+  if (key === 'p') {
+    if (paused === true) {
+      paused = false;
+      loop();
+    } else {
+      paused = true;
+      noLoop();
+    }
   }
 }
