@@ -13,7 +13,13 @@ function setup() {
 
 function draw() {
   if (paused) {
-    // We're paused, we can draw PAUSED stuff on the screen
+     push();
+  textStyle(BOLDITALIC);
+  textSize(75);
+  textAlign(CENTER, CENTER);
+  fill("rgb(0,0,0)");
+  text("PAUSED", width / 2, height / 2);
+  pop();
   } else {
     background(450);
 
