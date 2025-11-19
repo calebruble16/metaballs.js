@@ -3,6 +3,8 @@
 
 // MetaBalls : p5.js implementation
 
+var mouseRadius = 10;
+
 class Blob {
 
   constructor(x, y) {
@@ -19,6 +21,26 @@ class Blob {
     this.y += this.yspeed;
     if (this.x > width || this.x < 0) this.xspeed *= -1;
     if (this.y > height || this.y < 0) this.yspeed *= -1;
+    // Find distance to mouse
+    let distanceToMouse = dist(this.x, this.y, mouseX, mouseY);
+    // Is it within the mouse's radius?
+    if (distanceToMouse < mouseRadius) {
+      // Is it hitting on the left?
+      if (mouseX < this.x) {
+        this.xspeed = abs(this.xspeed);
+      } else if (mouseX > this.x) {
+        // The right?
+        this.xspeed = abs(this.xspeed) * -1;
+      }
+
+      // Is it hitting from the top?
+      if (mouseY < this.y) {
+        this.yspeed = abs(this.yspeed);
+      } else if (mouseY > this.y) {
+        // The bottom?
+        this.yspeed = abs(this.yspeed) * -1;
+      }
+    }
   }
 
   show() {
