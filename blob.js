@@ -3,7 +3,7 @@
 
 // MetaBalls : p5.js implementation
 
-var mouseRadius = 10;
+var mouseRadius = 100;
 
 class Blob {
 
