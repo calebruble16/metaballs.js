@@ -45,7 +45,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key === 'p') {
+  if (key === 'esc') {
     if (paused === true) {
       paused = false;
     } else {
